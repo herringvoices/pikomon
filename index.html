@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Pikodex</title>
+</head>
+<body>
+    <header id="title"></header>
+    <main>
+
+        <div id="overlay" class="overlay">
+            <div id="instructions" class="instructions hidden">Select a card.</div>
+            <div id="card-select" class="card-select hidden">
+
+                <div id="select0"></div>
+                <div id="select1"></div>
+                <div id="select2"></div>
+
+            </div>
+            <div id="start-game" class="start-game">
+                <div id="piko-title" class="piko-title">Pikomon</div>
+                <div class="start-button" id="start-button">Start Game</div>
+            </div>
+
+        </div>
+        <!-- This is where the attack values will be displayed -->
+        <div class="attack-container">
+            <div id="player-attack" class="player-attack">0</div>
+            <div id="enemy-attack" class="enemy-attack">0</div>
+        </div>
+
+        <!-- This is where the cards go when they are in play. -->
+        <div class="table">
+            <div class="piko-card" id="player-card"></div>
+
+            <div class="piko-card" id="enemy-card"></div>
+        </div>
+        
+        <div id="footer" class="piko-footer">
+            &#8625;<img src="assets/bot.svg"> &#8680;
+            <img src="assets/meat.svg"> &#8680;
+            <img src="assets/plant.svg"> &#8680;
+            <img src="assets/rock.svg"> &#8626;
+        </div>
+        
+        
+    </main>
+
+
+    <script type="module" src="./scripts/main.js"></script>
+</body>
+</html>
+
+
