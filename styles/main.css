@@ -266,13 +266,30 @@ html, body {
 
 }
 
-.hidden {
-    display: none;
-}
-
 .strong {
     color: gold;
     text-shadow: 0px 0px 20px #eee;
     
 
+}
+.roll {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    color: #111;
+    transform: translate(-50%, -50%);
+    background-color: #eee; 
+    box-shadow: 0px 0px 20px #eee;
+}
+
+.roll:hover {
+    background-color: #111;
+    color: #eee;
+    box-shadow: 0px 0px 20px #eee;
+    cursor: pointer;
+
+}
+
+.hidden {
+    display: none;
 }

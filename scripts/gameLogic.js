@@ -1,37 +1,40 @@
-import {displayHand, inPlay} from "./dom.js"
-import {database} from "./database.js"
+import { displayHand, inPlay } from "./dom.js"
+import { database } from "./database.js"
+
+// Global variables for hand and cards
 export let hand = []
 export let playerCard = {}
 export let enemyCard = {}
 
-export const playCard = (index) => {
-playerCard = hand[index]
-enemyCard = randomCard()
-inPlay()
-}
-
+// Start the game by drawing the player's hand
 export const startGame = () => {
     drawHand()
 }
 
+// Draws a hand of three cards
 const drawHand = () => {
     hand = []
-    hand.push(randomCard())
-    hand.push(randomCard())
-    hand.push(randomCard())
-
+    for (let i = 0; i < 3; i++) {
+        hand.push(randomCard())
+    }
     displayHand()
-
 }
 
-//Gets a random card from the database
+// Gets a random card from the database
 const randomCard = () => {
     let cardId = Math.floor(Math.random() * database.length) + 1
     return database.find(item => item.id === cardId)
 }
 
+// Player selects a card to play
+export const playCard = (index) => {
+    playerCard = hand[index]
+    enemyCard = randomCard()
+    inPlay()
+}
+
+// Check types to determine strength in combat
 export const checkTypes = () => {
-    // Define the strengths of each type
     const strengths = {
         'meat': 'plant',
         'plant': 'rock',
@@ -50,4 +53,3 @@ export const checkTypes = () => {
         return "neutral"
     }
 }
-
